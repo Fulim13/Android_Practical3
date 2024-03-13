@@ -15,6 +15,9 @@ class PageAFragment : Fragment() {
     private val nav by lazy { findNavController() }
 
     // TODO: Get arguments
+    private val str by lazy { requireArguments().getString("str", "")}
+    private val num by lazy { requireArguments().getInt("num", 0)}
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentPageABinding.inflate(inflater, container, false)
@@ -24,7 +27,8 @@ class PageAFragment : Fragment() {
         }
 
         // TODO: Output
-        binding.txt.text = "XXX = 999"
+//        binding.txt.text = "$str=$num"
+        binding.txt.text = "%s = %04d".format(str,num)
 
         return binding.root
     }

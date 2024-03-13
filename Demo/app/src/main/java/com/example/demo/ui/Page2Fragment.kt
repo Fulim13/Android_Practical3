@@ -18,6 +18,7 @@ class Page2Fragment : Fragment() {
         binding = FragmentPage2Binding.inflate(inflater, container, false)
 
         binding.btn.setOnClickListener {
+            nav.popBackStack(R.id.homeFragment, false)
             nav.navigate(R.id.page1Fragment)
         }
 

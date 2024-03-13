@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.demo.R
@@ -19,7 +20,10 @@ class Page3Fragment : Fragment() {
 
         binding.btnA.setOnClickListener {
             // TODO: Pass arguments
-            nav.navigate(R.id.pageAFragment)
+            nav.navigate(R.id.pageAFragment, bundleOf(
+                "str" to "Lucky Number",
+                "num" to (0..9999).random()
+            ))
         }
 
         binding.btnB.setOnClickListener {
